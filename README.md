@@ -8,15 +8,15 @@ Install the required libraries:
 ```
 pip install -r requirements.txt 
 ```
-To collect CIFAR10 data, run 
+Collect CIFAR10 data:
 ```
 python setup_cifar.py
 ```
-To download Inception-v3 model checkpoint, run 
+Download Inception-v3 model checkpoint: 
 ```
 python setup_inception.py
 ```
-To collect ImageNet test data, check instructions [here](https://github.com/nesl/adversarial_genattack) 
+Download ImageNet test data: [ImageNet test images](http://www-personal.umich.edu/~timtu/Downloads/imagenet_npy/imagenet_test_data.npy) and [ImageNet test labels](http://www-personal.umich.edu/~timtu/Downloads/imagenet_npy/imagenet_test_labels.npy) , and put them under folder `BayesOpt_Attacks/objective_func/tf_models/`
 
 
 ## Usage:
