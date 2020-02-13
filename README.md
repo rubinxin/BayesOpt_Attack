@@ -8,7 +8,16 @@ Install the required libraries:
 ```
 pip install -r requirements.txt 
 ```
-Collect MNIST, CIFAR10 and ImageNet datasets and the corresponding classification models by following instructions [here](https://github.com/nesl/adversarial_genattack) 
+To collect CIFAR10 data, run 
+```
+python setup_cifar.py
+```
+To download Inception-v3 model checkpoint, run 
+```
+python setup_inception.py
+```
+To collect ImageNet test data, check instructions [here](https://github.com/nesl/adversarial_genattack) 
+
 
 ## Usage:
 

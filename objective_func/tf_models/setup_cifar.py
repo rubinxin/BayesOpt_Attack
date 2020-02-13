@@ -65,7 +65,7 @@ class CIFAR:
         if not os.path.exists(f"{folder_path}cifar-10-batches-bin"):
             urllib.request.urlretrieve("https://www.cs.toronto.edu/~kriz/cifar-10-binary.tar.gz",
                                        "cifar-data.tar.gz")
-            os.popen("tar -xzf cifar-data.tar.gz").read()
+            os.popen(f"tar -xzf cifar-data.tar.gz").read()
             
 
         for i in range(5):
@@ -121,3 +121,6 @@ class CIFARModel:
 
     def predict(self, data):
         return self.model(data)
+
+if __name__ == '__main__':
+    CIFAR()

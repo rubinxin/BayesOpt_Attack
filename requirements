@@ -1,0 +1,11 @@
+tensorflow==1.6.0 # or tensorflow-gpu==1.6.0 if you have gpu
+torch==1.1.0
+GPy
+GPyOpt
+pyDOE
+matplotlib
+pillow==6.1.0
+h5py==2.9.0
+keras==2.2.4
+numpy==1.16.2
+scipy==1.2.1

@@ -12,7 +12,7 @@ from utilities.upsampler import upsample_projection
 from utilities.utilities import get_init_data
 
 
-def BNN_BO_Exps(obj_func, model_type, acq_type, batch_size, low_dim, sparse, seed,
+def BayesOpt_attack(obj_func, model_type, acq_type, batch_size, low_dim, sparse, seed,
                 img_offset, n_init=50, num_iter=40, ntargets=9, target_label=0, dim_reduction='BILI',
                 cost_metric=None, obj_metric=1, update_freq=10, nsubspaces=1):
     # Specify code directory
@@ -243,7 +243,7 @@ if __name__ == '__main__':
     sparse = args.sparse
     seed = args.seed
 
-    BNN_BO_Exps(obj_func=obj_func, model_type=model, acq_type=acq_func, batch_size=batch_n,
+    BayesOpt_attack(obj_func=obj_func, model_type=model, acq_type=acq_func, batch_size=batch_n,
                 low_dim=low_dim, img_offset=img_offset, n_init=n_init, nsubspaces=nsubspace,
                 num_iter=n_itrs, ntargets=ntargets, target_label=target_label, dim_reduction=rd, seed=seed,
                 cost_metric=dis_metric, obj_metric=obj_metric, update_freq=update_freq, sparse=sparse)
