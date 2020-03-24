@@ -52,10 +52,12 @@ def generate_attack_data_set(data, num_sample, img_offset, model, attack_type="t
             if random_target_class is not None:
                 np.random.seed(0)  # for parallel running
                 # randomly select one class to attack, except the true labels
-                # print(random_target_class)
-                seq_imagenet = np.random.choice(random_target_class, 100)
+                # seq_imagenet = np.random.choice(random_target_class, 100)
+                seq_imagenet = [1, 4, 6, 8, 9, 13, 15, 16, 19, 20, 22, 24, 25, 27, 28, 30, 34, 35, 36, 37, 38, 44, 49,
+                                51, 56, 59, 60, 61, 62, 63, 67, 68, 70, 71, 74, 75, 76, 77, 78, 79, 82, 84, 85, 87, 88,
+                                91, 94, 96, 97, 99]
+
                 seq = [seq_imagenet[img_offset + sample_index]]
-                # seq = np.random.choice(random_target_class, 1)
                 while seq == true_labels[img_offset+sample_index]:
                     seq = np.random.choice(random_target_class, 1)
                 

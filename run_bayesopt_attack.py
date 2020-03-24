@@ -181,7 +181,7 @@ if __name__ == '__main__':
     parser.add_argument('-f', '--func', help='Objective function(datasets): mnist, cifar10, imagenet',
                         default='imagenet', type=str)
     parser.add_argument('-m', '--model', help='Surrogate model: GP or ADDGPLD or ADDGPFD or GPLDR',
-                        default='GPLDR', type=str)
+                        default='GP', type=str)
     parser.add_argument('-acq', '--acq_func', help='Acquisition function type: LCB, EI',
                         default='LCB', type=str)
     parser.add_argument('-bm', '--batch_opt', help='BO batch option: CL, KB',
@@ -189,7 +189,7 @@ if __name__ == '__main__':
     parser.add_argument('-b', '--batch_size', help='BO batch size.',
                         default=1, type=int)
     parser.add_argument('-ld', '--low_dim', help='Dimension of reduced subspace.',
-                        default=196, type=int)
+                        default=2304, type=int)
     parser.add_argument('-init', '--n_init', help='Initial number of observation.',
                         default=30, type=int)
     parser.add_argument('-nitr', '--max_itr', help='Max BO iterations.',
@@ -201,7 +201,7 @@ if __name__ == '__main__':
                         default=0, type=int)
     parser.add_argument('-ntg', '--ntargets', help='Number of other targets to be attacked '
                                                    'Set to 9 for MNIST and CIFAR10; to 1 for ImageNet',
-                        default=9, type=int)
+                        default=1, type=int)
     parser.add_argument('-tg', '--target_label', help='Target label.',
                         default=0, type=int)
     parser.add_argument('-sp', '--sparse', help='Sparse GP method: subset selection (SUBRAND, SUBGREEDY), '
@@ -219,7 +219,7 @@ if __name__ == '__main__':
     parser.add_argument('-nsub', '--nsubspace',
                         help='Number of subspaces to be decomposed into only applicable for ADDGP: '
                              'we set to 12 for CIFAR10 or MNIST and 27 for ImageNet',
-                        default=12, type=int)
+                        default=1, type=int)
     parser.add_argument('-se', '--seed', help='Random seed', default=1, type=int)
 
     args = parser.parse_args()
