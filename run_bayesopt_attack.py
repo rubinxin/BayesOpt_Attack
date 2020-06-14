@@ -82,11 +82,11 @@ def BayesOpt_attack(obj_func, model_type, acq_type, batch_size, low_dim, sparse,
 
         # Define the name of results file and failure fail(for debug or resume)
         results_file_name = os.path.join(results_data_folder,
-                                         f'{model_type}{acq_type}{batch_size}_{dim_reduction}_\
-                                         d{low_dim}_i{input_label}_t{target_label}_id{img_id}')
+                                         f'{model_type}{acq_type}{batch_size}_{dim_reduction}_'
+                                         f'd{low_dim}_i{input_label}_t{target_label}_id{img_id}')
         failed_file_name = os.path.join(results_data_folder,
-                                        f'failed_{model_type}{acq_type}{batch_size}_{dim_reduction}_\
-                                        d{low_dim}_i{input_label}_t{target_label}_id{img_id}')
+                                        f'failed_{model_type}{acq_type}{batch_size}_{dim_reduction}_'
+                                        f'd{low_dim}_i{input_label}_t{target_label}_id{img_id}')
 
         X_opt_all_slices = []
         Y_opt_all_slices = []
@@ -149,7 +149,7 @@ def BayesOpt_attack(obj_func, model_type, acq_type, batch_size, low_dim, sparse,
                 # Transform data from reduced search space to original high-dimensional input space
                 X_h_query = upsample_projection(dim_reduction, X_query, low_dim=low_dim, high_dim=high_dim,
                                                 nchannel=nchannel)
-                X_query_all_slices.append(X_h_query)
+                X_query_all_slices.append(X_h_query[-2:])
                 X_h_opt = upsample_projection(dim_reduction, X_opt, low_dim=low_dim, high_dim=high_dim,
                                               nchannel=nchannel)
                 X_opt_all_slices.append(X_h_opt)
